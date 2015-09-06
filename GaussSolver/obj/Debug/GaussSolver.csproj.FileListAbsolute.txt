@@ -1,0 +1,6 @@
+D:\GaussSolver\GaussSolver\bin\Debug\GaussSolver.exe.config
+D:\GaussSolver\GaussSolver\bin\Debug\GaussSolver.exe
+D:\GaussSolver\GaussSolver\bin\Debug\GaussSolver.pdb
+D:\GaussSolver\GaussSolver\obj\Debug\GaussSolver.csprojResolveAssemblyReference.cache
+D:\GaussSolver\GaussSolver\obj\Debug\GaussSolver.exe
+D:\GaussSolver\GaussSolver\obj\Debug\GaussSolver.pdb
