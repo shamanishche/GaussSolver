@@ -26,7 +26,8 @@ public static class Gaussian_Solver
     }
 
     //Implements Gaussian Method of solving the sysmem of the linear equations
-    public static void Gaussian_Method(double[,] A, double[] B)
+    //if do_output = true, Gaussian_Method will show output with calculations
+    public static double[] Gaussian_Method(double[,] A, double[] B, bool do_output)
     {
 
         // Demension of the the sysmem of the linear equations
@@ -92,9 +93,13 @@ public static class Gaussian_Solver
                 Console.ReadKey();
                 System.Environment.Exit(1);
             }
-            Console.ReadKey();
-            Console.WriteLine("Matrix A and vector B. Iteration {0}. Press any key to continue:", iteration + 1);
-            Gaussian_Solver.PrintMatrix(A, B);
+            if (do_output)
+            {
+                Console.ReadKey();
+                Console.WriteLine("Matrix A and vector B. Iteration {0}. Press any key to continue:", iteration + 1);
+                Gaussian_Solver.PrintMatrix(A, B);
+            }
+
         }
 
         // Backward path of the Gauss. Finding vector X.
@@ -128,12 +133,16 @@ public static class Gaussian_Solver
             }
         }
 
-        Console.ReadKey();
-        Console.Write("Vector X:\n");
-        for (int i = 0; i < lineq_dim; i++)
+        if (do_output)
         {
-            Console.Write("X{0} = {1:F4}\n", i + 1, B[i]);
+            Console.ReadKey();
+            Console.Write("Vector X:\n");
+            for (int i = 0; i < lineq_dim; i++)
+            {
+                Console.Write("X{0} = {1:F4}\n", i + 1, B[i]);
+            }
         }
+
 
         double[] E = new double[lineq_dim];
         for (int row = 0; row < lineq_dim; row++)
@@ -146,10 +155,14 @@ public static class Gaussian_Solver
             E[row] = copy_B[row] - Sum;
 
         }
-        Console.Write("Vector E. Press any key finish the application:\n");
-        for (int i = 0; i < lineq_dim; i++)
+        if (do_output)
         {
-            Console.Write("E{0} = {1:F4}\n", i + 1, E[i]);
+            Console.Write("Vector E. Press any key finish the application:\n");
+            for (int i = 0; i < lineq_dim; i++)
+            {
+                Console.Write("E{0} = {1:F4}\n", i + 1, E[i]);
+            }
         }
+        return B;
     }
 }

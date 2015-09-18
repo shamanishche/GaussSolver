@@ -45,3 +45,5 @@ Temporary Items
 # debug and bin directory
 /GaussSolver/bin
 /GaussSolver/obj
+/GaussSolverTests/bin
+/GaussSolverTests/obj

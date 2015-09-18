@@ -47,6 +47,7 @@ namespace GaussSolver
             // Creation of the matrix A and vector B
             double[,] A = new double[lineq_dim, lineq_dim];
             double[]  B = new double[lineq_dim];
+            double[]  X = new double[lineq_dim];
 
             // Putting input data into matrix A and vector B
             for (int row  = 0; row < lineq_dim; row++)
@@ -70,7 +71,7 @@ namespace GaussSolver
 
             Console.WriteLine("Input data. Matrix A and vector B. Press any key to continue:");
             Gaussian_Solver.PrintMatrix(A, B);
-            Gaussian_Solver.Gaussian_Method(A, B);
+            Gaussian_Solver.Gaussian_Method(A, B, true);
 
             Console.ReadKey();
         }
